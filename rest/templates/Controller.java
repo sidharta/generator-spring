@@ -2,7 +2,7 @@ package <%= packageName %>.controller;
 
 import java.util.concurrent.atomic.AtomicLong;
 
-import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import <%= packageName %>.domain.<%= representation %>;
 
 
-@Controller
+@RestController
 @RequestMapping("<%= controllerPath %>")
 public class <%= controllerName %> {
 
