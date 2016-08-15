@@ -20,7 +20,7 @@ public class <%= controllerName %> {
     public
     @ResponseBody
     <%= representation %> process(@RequestParam(value = "content", required = false, defaultValue = "content") String content) {
-        return new <%= representation %>(counter.incrementAndGet(), content );
+        return new <%= representation %>(new Long(counter.incrementAndGet()), content );
     }
 
 }

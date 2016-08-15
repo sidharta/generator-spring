@@ -1,21 +1,15 @@
 package <%= packageName%>.domain;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
+
+@Data
+@NoArgsConstructor(force = true)
+@AllArgsConstructor
 public class <%=representation%> {
 
-    private final long id;
+    private Long id;
     private final String content;
-
-    public <%=representation%>(long id, String content) {
-        this.id = id;
-        this.content = content;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public String getContent() {
-        return content;
-    }
 
 }

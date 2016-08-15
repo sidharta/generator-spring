@@ -35,7 +35,10 @@ dependencies {
     <% if( actuator ){ %>compile 'org.springframework.boot:spring-boot-starter-actuator:<%= bootVersion %>'<% } %>
     <% if( batch ){ %>compile 'org.springframework.boot:spring-boot-starter-batch:<%= bootVersion %>'<% } %>
     <% if( jdbc ){ %>compile 'org.springframework.boot:spring-boot-starter-jdbc:<%= bootVersion %>'<% } %>
-    <% if( jpa ){ %>compile 'org.springframework.boot:spring-boot-starter-data-jpa:<%= bootVersion %>'<% } %>
+    <% if( jpa ){ %>
+      compile 'org.springframework.boot:spring-boot-starter-data-jpa:<%= bootVersion %>'
+      runtime 'org.hsqldb:hsqldb:2.3.4'
+      <% } %>
     <% if( hateoas ){ %>compile 'com.fasterxml.jackson.core:jackson-databind'
     compile 'org.springframework.hateoas:spring-hateoas:0.7.0.RELEASE'<% } %>
     <% if( integration ){ %>compile 'org.springframework.boot:spring-boot-starter-integration:<%= bootVersion %>'<% } %>
@@ -44,6 +47,7 @@ dependencies {
     <% if( websocket ){ %>compile 'org.springframework.boot:spring-boot-starter-websocket:<%= bootVersion %>'<% } %>
     <% if( useSpock ) {%>testCompile 'org.codehaus.groovy:groovy-all:2.1.7'
     testCompile 'org.spockframework:spock-core:0.7-groovy-2.0'<%}%>
+    compileOnly 'org.projectlombok:lombok:1.16.10'
 }
 
 task run(type:Exec){
